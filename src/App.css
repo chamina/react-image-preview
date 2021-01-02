@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.center-col {
+  
+  overflow-y: scroll;  flex: 1;
+
+  position: absolute;
+}
+
+.close {
+  cursor: pointer;
+  position: relative;
+ 
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
