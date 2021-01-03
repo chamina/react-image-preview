@@ -5,9 +5,8 @@ import { imageSelect } from "../imagePreview/imageActions";
 
 const ResultPane: React.FC<{
   userData: any;
-  imageData: [];
   fetchImage: (val: any) => any;
-}> = function ResultPane({ userData, fetchImage, imageData }) {
+}> = function ResultPane({ userData, fetchImage }) {
   return (
     <div>
       <Row>
@@ -33,7 +32,6 @@ const ResultPane: React.FC<{
 const mapStateToProps = (state: any) => {
   return {
     userData: state.users,
-    imageData: state.images,
   };
 };
 

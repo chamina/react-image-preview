@@ -9,16 +9,16 @@ import {
   Button,
 } from "react-bootstrap";
 import { connect } from "react-redux";
-import { fetchUsers, filterByName, reset } from "../imagePreview/imageActions";
+import { fetchImages, filterByName, reset } from "../imagePreview/imageActions";
 import ImageDisplay from "./ImageDisplay";
 import ResultPane from "./ResultPane";
 const e: React.FC<{
-  fetchUsers: () => any;
+  fetchImages: () => any;
   reset: () => any;
   filter: (val: any) => any;
-}> = function FilterLayout({ fetchUsers, reset, filter }) {
+}> = function FilterLayout({ fetchImages, reset, filter }) {
   const fetchUserCallBack = useCallback(() => {
-    fetchUsers();
+    fetchImages();
   }, []);
 
   const textInput = createRef<HTMLInputElement>();
@@ -93,13 +93,13 @@ const e: React.FC<{
 const mapStateToProps = (state: any) => {
   return {
     userData: state.users,
-    imageData: state.images,
+    imageData: state.images
   };
 };
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    fetchUsers: () => dispatch(fetchUsers()),
+    fetchImages: () => dispatch(fetchImages()),
     reset: () => dispatch(reset()),
     filter: (val: any) => dispatch(filterByName(val)),
   };

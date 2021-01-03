@@ -16,7 +16,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action: any) => {
-  console.log(action.type);
   switch (action.type) {
     case FETCH_IMAGES_REQUEST:
       return {
@@ -35,7 +34,7 @@ const reducer = (state = initialState, action: any) => {
     case FILTER_BY_NAME:
       let value = action.payload;
       let filteredValues = state.users.filter((user: any) => {
-        return user.author.toLowerCase().includes(value);
+        return user.author.includes(value);
       });
       return {
         ...state,
@@ -48,11 +47,11 @@ const reducer = (state = initialState, action: any) => {
         ...state,
         images: arrayVar,
       };
-      case IMAGE_DESELECT:
-        let val = action.payload;
-        let removeValue = state.images.filter((image: any) => {
-          return image !== val
-        });
+    case IMAGE_DESELECT:
+      let val = action.payload;
+      let removeValue = state.images.filter((image: any) => {
+        return image !== val;
+      });
       return {
         ...state,
         images: removeValue,

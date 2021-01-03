@@ -9,7 +9,7 @@ import {
   IMAGE_DESELECT,
 } from "./imageTypes";
 
-export const fetchUsers = () => {
+export const fetchImages = () => {
   return (dispatch: any) => {
     dispatch(fetchImagesRequest());
     axios
